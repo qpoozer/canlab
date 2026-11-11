@@ -9,7 +9,7 @@
 
 | 周 | 日期 | 状态 | 交付物 |
 |---|---|---|---|
-| W0 | 11/11–11/15 | ⬜ | 目录 / venv / 九项设置 / Git / check_env 全绿 |
+| W0 | 11/11–11/15 | ✅ | 目录 / venv / 九项设置 / Git / check_env 全绿 |
 | W1 | 11/16–11/22 | ⬜ | 10 个练习 + 词频脚本 |
 | W2 | 11/23–11/29 | ⬜ | logfilter CLI + notes/errors.md |
 | W3 | 11/30–12/06 | ⬜ | 一页测试结果复盘（4 图 + 4 结论） |
@@ -35,11 +35,9 @@
 
 ## W0 · 装修
 
-- 做了什么：
-
-- 卡住的地方：
-
-- 啊哈时刻：
+- 做了什么：建 venv（Py3.12.3）→ 装 11 个包 → 建目录骨架 → 写 check_env.py / pyproject.toml / README / .gitignore → 配 Git 身份 → 首次提交
+- 卡住的地方：cmd 不把 `;` 当分隔符，`pip install -U pip; python -m pip install ...` 整段被当成一个命令，报 `no such option: -m`
+- 啊哈时刻：`check_env.py` 全绿那一刻，才明白「环境配好了」是可以被验证的，不是凭感觉
 
 ---
 
