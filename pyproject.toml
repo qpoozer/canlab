@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canlab"
+version = "0.1.0"
+description = "车载 CAN 日志自动体检工具：解析 / 解码 / 异常检测 / 台架点检 / 回归"
+requires-python = ">=3.12"
+dependencies = [
+    "python-can==4.6.1",
+    "cantools==45.1.2",
+    "pandas==2.2.2",
+    "matplotlib==3.9.2",
+    "pyserial>=3.5",
+    "msgpack>=1.0",
+    "PyYAML>=6.0",
+]
+
+# W6 打通 CLI 之后再打开下面这段（入口函数还不存在时就启用，安装能过、命令会报错，容易混淆）
+# [project.scripts]
+# canlab-analyze = "canlog.cli:analyze_main"
+# canlab-bench   = "canlog.cli:bench_main"
+# canlab-regress = "canlog.cli:regress_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v --strict-markers"
+markers = [
+    "slow: 跑得比较久的用例（日常用 -m \"not slow\" 跳过）",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_ignores = true
+ignore_missing_imports = true
+files = ["src"]

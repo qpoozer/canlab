@@ -1,0 +1,30 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---- 虚拟环境 ----
+.venv/
+
+# ---- 测试与工具缓存 ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ---- 本项目的数据与产物（全部由 tools/ 生成，不进仓库）----
+data/
+out/
+
+# ---- IDE ----
+# .idea/ 交给 PyCharm 自带的 .idea/.gitignore 管理（只忽略 workspace.xml 等本机文件）
+.vscode/
+
+# ---- 系统 ----
+Thumbs.db
+desktop.ini
